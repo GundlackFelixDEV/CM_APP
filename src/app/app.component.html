@@ -1,9 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="d-flex flex-column h-100">
+<div class="d-flex flex-column h-100" id="main_frame">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h4 class="text-white">Collapsed content</h4>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
+      <span class="text-muted">Toggleable via the navbar brand.</span><br>
+      <button type="button" id="show-onboard" class="hidden-button btn btn-secondary" (click)="switch_to('introduction-component')">On-Board</button><br>
+      <button type="button" id="show-dashboard" class="hidden-button btn btn-secondary" (click)="switch_to('mstracer-component')">Dash-Board</button><br>
+      <button type="button" id="show-dashboard" class="hidden-button btn btn-secondary" (click)="switch_to('profile-component')">My Profile</button>
     </div>
   </div>
   <nav class="navbar navbar-light bg-light sticky-top">
@@ -15,7 +18,11 @@
       <img src="./assets/cancer_logo.png" height="50" class="d-inline-block align-top" alt="">
     </a>
   </nav>
-      <app-dashboard> </app-dashboard>
+  <div class="bg-app h-100 flex-grow" id="main-frame">
+    <app-introduction-component class="hidden" id="introduction-component"></app-introduction-component>
+    <app-dashboard  id="mstracer-component"></app-dashboard>
+    <app-user-profile class="hidden" id="profile-component"></app-user-profile>
   </div>
+
 
 <router-outlet></router-outlet>

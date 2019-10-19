@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MoodwelcomeComponent } from './moodwelcome.component';
+import { InfosliderComponent } from './infoslider.component';
 
-describe('MoodwelcomeComponent', () => {
-  let component: MoodwelcomeComponent;
-  let fixture: ComponentFixture<MoodwelcomeComponent>;
+describe('InfosliderComponent', () => {
+  let component: InfosliderComponent;
+  let fixture: ComponentFixture<InfosliderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoodwelcomeComponent ]
+      declarations: [ InfosliderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MoodwelcomeComponent);
+    fixture = TestBed.createComponent(InfosliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
