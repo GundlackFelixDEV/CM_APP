@@ -11,6 +11,7 @@ import { MSTracerComponent } from './mstracer/app.component.mstracer';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { QuoteComponent } from './quote/quote.component';
+import { MoodwelcomeComponent } from './moodwelcome/moodwelcome.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { QuoteComponent } from './quote/quote.component';
     MSTracerComponent,
     DashboardComponent,
     WelcomeComponent,
-    QuoteComponent
+    QuoteComponent,
+    MoodwelcomeComponent
   ],
   imports: [
     BrowserModule,
