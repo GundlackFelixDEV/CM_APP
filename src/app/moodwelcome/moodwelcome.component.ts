@@ -3,6 +3,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { Diary_Entry } from '../Models/Diary_Model';
 import { DiaryService } from '../Services/diary.service';
 import { Router, NavigationStart, NavigationEnd} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-moodwelcome',
@@ -14,8 +15,9 @@ export class MoodwelcomeComponent implements OnInit {
   init_x:any;
   end_x:any;
 
-  constructor(private service: DiaryService, private router: Router) {
+  constructor(private service: DiaryService, private router: Router, private http_client: HttpClientModule) {
     this.service = service;
+    this.http_client = http_client
     this.entry = new Diary_Entry();
     this.init_x = 137;
     this.end_x = 340;
@@ -33,6 +35,45 @@ export class MoodwelcomeComponent implements OnInit {
     this.service.addEntry(this.entry);
     $("#mood-welcome-component").addClass("hidden")
     $("#dashboard-component").removeClass("hidden")
+
+    const http = new XMLHttpRequest();
+    const url = "http://192.168.20.95:8000/recommandation";
+    var data = {
+      "sent":this.entry.HWPL_Text,
+      "lia": this.entry.HWPL_Value.W,
+      "health": this.entry.HWPL_Value.H,
+      "fun": this.entry.HWPL_Value.P,
+      "love": this.entry.HWPL_Value.L,
+      "functions_name":"sleep&&go to the doctor&&eat well&&spend time with friends&&go drink a beer&&spend time with family&&make some exercise"
+    }
+
+    console.log(data)
+
+    $.ajax({
+        url : url,
+        data : data,
+        method : 'post',
+        dataType : 'json',
+        success : function(response){
+            console.log("funciona bien");
+        },
+        error: function(error){
+            console.log("No funciona");
+        }
+    });
+
+
+    // http.open("POST", url, true);
+    // http.setRequestHeader("Content-Type", "application/json");
+    // console.log(JSON.stringify(data))
+    // http.send(JSON.stringify(data));
+    //
+    //
+    // http.onreadystatechange = (e) => {
+    //   console.log("##############################")
+    //   console.log(http.responseText)
+    // }
+
     this.entry = new Diary_Entry()
     this.router.navigate(["/Dashboard"])
     //window.history.pushState(null, "/home", "/Dashboard?debug=true");
@@ -70,6 +111,7 @@ export class MoodwelcomeComponent implements OnInit {
     this.entry.Mood = 1
     localStorage.setItem('smiley', "cold");
   }
+
 
   click_sick(){
     $("#cold_face").removeClass("selected")

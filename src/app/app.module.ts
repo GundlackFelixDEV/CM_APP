@@ -47,7 +47,8 @@ import {environment} from "../environments/environment";
     MatSliderModule,
     MatProgressBarModule,
     AngularFireModule.initializeApp(environment.firebase, "fightclub-20"),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
