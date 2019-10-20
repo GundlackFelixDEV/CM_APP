@@ -13,6 +13,7 @@ export class DiaryService {
         db.list('/DiaryEntries')
         .valueChanges()
         .subscribe((list) => {
+          var that = this;
           list.forEach(function(item){
               var entry = new Diary_Entry();
               console.log(item);
@@ -24,7 +25,7 @@ export class DiaryService {
               }
               entry.set_arguments(item.date, value, item.HWPL_Text, item.Mood)
               console.log(entry);
-              this.Diary.Entries.push(entry);
+              that.Diary.Entries.push(entry);
             });
           console.log(this.Diary.Entries);
         });
