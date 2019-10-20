@@ -28,13 +28,19 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@types/jquery": "^2.0.54",
     "angular-font-awesome": "^3.1.2",
+    "angular-simple-slider": "^1.0.0",
     "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
     "bootstrap-daterangepicker": "^3.0.5",
     "firebase": "^7.2.1",
     "font-awesome": "^4.7.0",
+<<<<<<< HEAD
     "hammerjs": "^2.0.8",
+=======
+    "highcharts": "^7.2.0",
+>>>>>>> 38c1024473208e951772ffb8384b48cda79b497f
     "jquery": "^3.4.1",
+    "ngx-simple-slider": "^1.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
