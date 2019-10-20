@@ -9,22 +9,24 @@ export class DiaryService {
     Diary: Diary;
     todos$: any[];
     constructor (private db: AngularFireDatabase){
-
         this.Diary = new Diary();
         db.list('/DiaryEntries')
         .valueChanges()
         .subscribe((list) => {
-          this.todo$ = list;
-          console.log(this.todo$)
-          var next_entry;
-          for(var i=0; i<this.todo$.length; i++){
-            console.log(this.todo$[i]);
-            next_entry = new Diary_Entry();
-            next_entry.set_arguments(this.todo$[i].date, this.todo$[i].HWPL_Value_H, this.todo$[i].HWPL_Value_W,
-               this.todo$[i].HWPL_Value_P, this.todo$[i].HWPL_Value_L, this.todo$[i].HWPL_Text, this.todo$[i].Mood);
-            this.Diary.Entries.push(next_entry);
-          }
-
+          list.forEach(function(item){
+              var entry = new Diary_Entry();
+              console.log(item);
+              var value = {
+                H: Number(item["HWPL_Value_H"]),
+                L: Number(item["HWPL_Value_L"]),
+                P: Number(item["HWPL_Value_P"]),
+                W: Number(item["HWPL_Value_W"])
+              }
+              entry.set_arguments(item.date, value, item.HWPL_Text, item.Mood)
+              console.log(entry);
+              this.Diary.Entries.push(entry);
+            });
+          console.log(this.Diary.Entries);
         });
     }
 
