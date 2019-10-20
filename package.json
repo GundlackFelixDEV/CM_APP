@@ -34,11 +34,11 @@
     "bootstrap-daterangepicker": "^3.0.5",
     "firebase": "^7.2.1",
     "font-awesome": "^4.7.0",
-<<<<<<< HEAD
+
     "hammerjs": "^2.0.8",
-=======
+
     "highcharts": "^7.2.0",
->>>>>>> 38c1024473208e951772ffb8384b48cda79b497f
+
     "jquery": "^3.4.1",
     "ngx-simple-slider": "^1.2.0",
     "rxjs": "~6.4.0",

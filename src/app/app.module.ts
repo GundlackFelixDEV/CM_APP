@@ -17,16 +17,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { QuoteComponent } from './quote/quote.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoodwelcomeComponent } from './moodwelcome/moodwelcome.component';
 import { HWPLDashboardComponent } from './HWPL/HWPL_Dashboard/HWPL_Dashboard_component';
 import { DisplayDiaryComponent } from './display-diary/display-diary.component';
-=======
 import { MooddetailComponent } from './mooddetail/mooddetail.component';
 import { InfosliderComponent } from './infoslider/infoslider.component';
-import { NgxSimpleSliderModule } from 'ngx-simple-slider';
->>>>>>> 38c1024473208e951772ffb8384b48cda79b497f
+
+
 
 @NgModule({
   declarations: [
@@ -37,14 +35,13 @@ import { NgxSimpleSliderModule } from 'ngx-simple-slider';
     DashboardComponent,
     WelcomeComponent,
     QuoteComponent,
-<<<<<<< HEAD
+
     MoodwelcomeComponent,
     HWPLDashboardComponent,
-    DisplayDiaryComponent
-=======
+    DisplayDiaryComponent,
+
     MooddetailComponent,
     InfosliderComponent
->>>>>>> 38c1024473208e951772ffb8384b48cda79b497f
   ],
   imports: [
     BrowserModule,
@@ -52,14 +49,10 @@ import { NgxSimpleSliderModule } from 'ngx-simple-slider';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-<<<<<<< HEAD
     BrowserAnimationsModule,
     MatRadioModule,
     MatSliderModule,
     MatProgressBarModule
-=======
-    NgxSimpleSliderModule
->>>>>>> 38c1024473208e951772ffb8384b48cda79b497f
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./infoslider.component.scss']
 })
 export class InfosliderComponent implements OnInit {
-
+  slideNumber : number;
 
   constructor() {this.slideNumber=1 }
 
